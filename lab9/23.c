@@ -86,7 +86,7 @@ struct Node* deleteAtGivenPos(struct Node* head, int pos){
     struct Node* toDelete = temp->next;
     temp->next = temp->next->next;
     free(toDelete);
-    printf("\nNode at %d position is deleted\n", pos);
+    printf("\nNode at given position is deleted\n");
     return head;
 }
 
