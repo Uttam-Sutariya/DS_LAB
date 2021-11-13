@@ -68,7 +68,7 @@ struct Node* deleteLast(struct Node* head){
     while(temp->next->next != NULL)    
         temp = temp->next;
 
-    struct Node* toDelete = temp;
+    struct Node* toDelete = temp.next;
     temp->next = NULL;
     free(toDelete);
     return head;
