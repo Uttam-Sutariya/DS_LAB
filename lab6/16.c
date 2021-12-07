@@ -53,22 +53,15 @@ char pop(struct Stack* stack){
         return stack->arr[stack->top--];
 }
 
-// print the stack
-// void printStack(struct Stack* stack){
-//     printf("\n");
-//     for (int i = 0; i < stack->capacity; i++)
-//     {
-//         printf("%d ", stack->arr[i]);
-//     }
-//     printf("\n");
-// }
-
+int isDigit(char x){
+    return x-'0' >= 0 && x-'0' <= 9;
+}
 
 //this function evaluate prefix expression
 void evaluate_prefix(struct Stack* stack , char str[]){
     for (int i = strlen(str)-1; i >=0 ; i--){
         char t = str[i];
-        if(t!='+' && t!='-' && t!='/' && t!= '*' && t!='$' && t!='^'){
+        if(isDigit(t)){
             push(stack, t - '0');
         }
         else{
