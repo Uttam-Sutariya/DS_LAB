@@ -53,13 +53,16 @@ char pop(struct Stack* stack){
         return stack->arr[stack->top--];
 }
 
+int isDigit(char x){
+    return x-'0' >= 0 && x-'0' <= 9;
+}
+
 //this function evaluate postfix expression
 void evaluate_postfix(struct Stack* stack , char str[]){
     for (int i = 0; i < strlen(str); i++){
         char t = str[i];
-        if(t!='+' && t!='-' && t!='/' && t!= '*' && t!='$' && t!='^'){
+        if(isDigit(t))
             push(stack, t - '0');
-        }
         else{
             int op2 = pop(stack);
             int op1 = pop(stack);
