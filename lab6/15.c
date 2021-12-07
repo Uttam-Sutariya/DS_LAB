@@ -53,17 +53,6 @@ char pop(struct Stack* stack){
         return stack->arr[stack->top--];
 }
 
-// print the stack
-// void printStack(struct Stack* stack){
-//     printf("\n");
-//     for (int i = 0; i < stack->capacity; i++)
-//     {
-//         printf("%d ", stack->arr[i]);
-//     }
-//     printf("\n");
-// }
-
-
 //this function evaluate postfix expression
 void evaluate_postfix(struct Stack* stack , char str[]){
     for (int i = 0; i < strlen(str); i++){
